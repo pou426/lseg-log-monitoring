@@ -4,6 +4,11 @@ The **LSEG Log Monitoring Application** is a Java-based application designed to 
 files, measures how long each job takes from start to finish and generates warnings or errors 
 if the processing time exceeds certain thresholds.
 
+**Output**:
+See [logmonitor/src/job-duration-report.txt](logmonitor/src/job-duration-report.txt) for example output based on given [input log file](logmonitor/src/main/resources/logs.txt).
+
+See [**Further Work**](#further-work) section for some examples of remaining work for this application.
+
 ## Project Structure
 
 ```text
@@ -43,3 +48,8 @@ LSEG-LOG-MONITORING/
 1. Open the folder in VSCode
 1. Install the Java Extension Pack if prompted
 1. Open App.java, then click _Run_
+
+## Further Work
+
+1. Improve test coverage: integration tests (especially for I/Os), end-to-end tests, smoke tests, etc.
+1. Allow users to specific input and output file locations via a flag.

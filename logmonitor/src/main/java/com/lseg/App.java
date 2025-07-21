@@ -1,20 +1,28 @@
 package com.lseg;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UncheckedIOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.List;
 
 /**
  * Log Monitoring Application.
  */
 public final class App {
-    private final JobRunCollector collector;
+    private static final String OUTPUT_FILENAME = "/tmp/job-duration-report.txt";
 
-    private App(JobRunCollector collector) {
+    private final JobRunCollector collector;
+    private final ReportGenerator generator;
+
+    private App(JobRunCollector collector, ReportGenerator generator) {
         this.collector = collector;
+        this.generator = generator;
     }
 
     private List<JobRun> getJobRuns() {
@@ -42,9 +50,27 @@ public final class App {
             System.err.println("WARNING: No job runs found. Output will not be generated.");
         }
 
-        System.out.println("Job runs:");
-        for (JobRun jobRun : jobRuns) {
-            System.out.println(jobRun);
+        Path outputPath = Path.of(OUTPUT_FILENAME);
+        try {
+            Files.createDirectories(outputPath.getParent());
+
+            // Warning if overwriting an existing file
+            if (Files.exists(outputPath)) {
+                System.err.println("WARNING: The file " + outputPath + " already exists and will be overwritten.");
+            }
+
+            try (BufferedWriter writer = Files.newBufferedWriter(
+                outputPath,
+                StandardOpenOption.CREATE,
+                StandardOpenOption.TRUNCATE_EXISTING,
+                StandardOpenOption.WRITE)) {
+                for (JobRun jobRun : jobRuns) {
+                    String line = generator.createReportEntry(jobRun);
+                    writer.write(line);
+                }
+            }
+        } catch (IOException e) {
+            throw new UncheckedIOException("Failed to write to file: " + e.getMessage(), e);
         }
     }
 
@@ -54,6 +80,7 @@ public final class App {
      */
     public static void main(String[] args) {
         JobRunCollector collector = new JobRunCollector();
-        new App(collector).run();
+        ReportGeneratorImpl generator = new ReportGeneratorImpl();
+        new App(collector, generator).run();
     }
 }
