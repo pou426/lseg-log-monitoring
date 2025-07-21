@@ -40,4 +40,33 @@ public class LogEntryTest {
         String line = "11:36:11,scheduled task 796,START";
         assertThrows(IllegalArgumentException.class, () -> LogEntry.fromCSV(line));
     }
+
+    @Test
+    void testLogEntry_getKey() {
+        LogEntry entry = new LogEntry(
+            LocalTime.of(11, 36, 11),
+            "scheduled task 796",
+            "START",
+            "57672"
+        );
+        assertEquals("scheduled task 796-57672", entry.getKey());
+    }
+
+    @Test
+    void testLogEntry_withTimeAndEvent() {
+        LogEntry entry = new LogEntry(
+            LocalTime.of(11, 36, 11),
+            "scheduled task 796",
+            "START",
+            "57672"
+        );
+        LogEntry expected = new LogEntry(
+            LocalTime.of(01, 01, 01),
+            "scheduled task 796",
+            "END",
+            "57672"
+        );
+
+        assertEquals(expected, entry.toEnd(LocalTime.of(01, 01,01)));
+    }
 }

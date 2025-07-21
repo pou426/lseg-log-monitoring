@@ -18,4 +18,18 @@ public record LogEntry(LocalTime time, String description, String event, String 
                 parts[2].trim(),
                 parts[3].trim());
     }
+
+    /**
+     * Returns a unique key for this log entry based on its description and pid 
+     */
+    public String getKey() {
+        return String.format("%s-%s", description, pid);
+    }
+
+    /**
+     * Returns a new LogEntry that marks the end of this job with the given {@code time}.
+     */
+    public LogEntry toEnd(LocalTime time) {
+        return new LogEntry(time, description, "END", pid);
+    }
 }
