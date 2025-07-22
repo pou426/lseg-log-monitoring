@@ -2,9 +2,11 @@ package com.lseg;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
 
 /**
  * Collects job runs based on given log entries. When the collect job runs are
@@ -17,7 +19,7 @@ import java.util.Map;
 */
 public class JobRunCollector {
     private final Map<String, LogEntry> startedJobs;
-    private final List<JobRun> jobRuns;
+    private final PriorityQueue<JobRun> jobRuns;
     private LocalTime latestTimeStamp;
 
     /**
@@ -26,7 +28,7 @@ public class JobRunCollector {
      */
     public JobRunCollector() {
         startedJobs = new HashMap<>();
-        jobRuns = new ArrayList<>();
+        jobRuns = new PriorityQueue<>(Comparator.comparing(jobRun -> jobRun.start().time()));
         latestTimeStamp = LocalTime.MIN;
     }
 
@@ -61,7 +63,10 @@ public class JobRunCollector {
             jobRuns.add(JobRun.of(unfinishedJob, unfinishedJob.toEnd(latestTimeStamp), /* isFinished= */ false));
         }
 
-        List<JobRun> results = new ArrayList<>(jobRuns);
+        List<JobRun> results = new ArrayList<>();
+        while (!jobRuns.isEmpty()) {
+            results.add(jobRuns.poll());
+        }
         flush();
         return results;
     }
