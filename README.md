@@ -4,12 +4,11 @@ The **LSEG Log Monitoring Application** is a Java-based application designed to 
 files, measures how long each job takes from start to finish and generates warnings or errors 
 if the processing time exceeds certain thresholds.
 
-**Output**:
+- **Output**:
 See [logmonitor/src/job-duration-report.txt](logmonitor/src/job-duration-report.txt) for example output based on given [input log file](logmonitor/src/main/resources/logs.txt).
-
-**Entry point**: [App.java](logmonitor/src/main/java/com/lseg/App.java)
-
-See [**Further Work**](#further-work) section for some examples of remaining work for this application.
+- Refer to [this section](#run-the-application-with-runsh-script) on **how to run the application**.
+- **Entry point**: [App.java](logmonitor/src/main/java/com/lseg/App.java)
+- See [**Further Work**](#further-work) section for some examples of remaining work for this application.
 
 ## Project Structure
 
@@ -45,6 +44,12 @@ LSEG-LOG-MONITORING/
 
 ## Development
 
+### Prerequisite
+
+1. VSCode or your preferred IDE
+1. Install maven.
+    If you are on macOS and have Homebrew installed: `brew install maven`
+
 ### Running from VSCode
 
 1. Open the folder in VSCode
@@ -56,6 +61,45 @@ To run tests:
 1. Go tto the _Testing sidebar_ (icon with a beaker/flask)
 1. Click _Run Tests_, or run them individually via the play icon beside each test
 1. Alternatively, right-click in a test file and select _Run Test_ or _Debug Test_
+
+### Run the Application with `run.sh` script
+
+1. Make sure the script is executable
+    ```bash
+    chmod +x run.sh
+    ```
+
+1. Run the script
+    ```bash
+    ./run.sh
+    ```
+
+1. View the results
+    ```bash
+    cat /tmp/job-duration-report.txt
+    ```
+
+### Package and Run the Application
+
+1. Navigate to project directory
+    ```bash
+    cd logmonitor
+    ```
+
+1. Build and package the application using Maven
+    ```bash
+    mvn clean package
+    ```
+
+1. Run the application:
+    ```bash
+    java -jar target/logmonitor-1.0-SNAPSHOT.jar
+    ```
+
+1. View the results
+    ```bash
+    cat /tmp/job-duration-report.txt
+    ```
 
 ## Further Work
 
