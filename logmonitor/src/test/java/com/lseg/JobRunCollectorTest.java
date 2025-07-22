@@ -22,9 +22,9 @@ public class JobRunCollectorTest {
         assertEquals(1, results.size());
 
         LogEntry expectedStartEntry = new LogEntry(
-            LocalTime.of(12,00,00),"Job A", "START", "1234");
+            LocalTime.of(12, 00, 00), "Job A", "START", "1234");
         LogEntry expectedEndEntry = new LogEntry(
-            LocalTime.of(12,01,00),"Job A", "END", "1234");
+            LocalTime.of(12, 01, 00), "Job A", "END", "1234");
         assertEquals(
             new JobRun(expectedStartEntry, Optional.of(expectedEndEntry), Duration.ofMinutes(1L)),
             results.get(0));

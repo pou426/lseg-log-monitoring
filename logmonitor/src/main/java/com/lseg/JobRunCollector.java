@@ -6,10 +6,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/** 
+/**
  * Collects job runs based on given log entries. When the collect job runs are
  * retrieved, the collected data are flushed from the collector.
- * 
+ *
  * <p>Important:
  *      1. The collector is not thread-safe. It must be used in a single thread.
  *      2. The collector assumes log entries are provided in chronological order.
@@ -20,6 +20,10 @@ public class JobRunCollector {
     private final List<JobRun> jobRuns;
     private LocalTime latestTimeStamp;
 
+    /**
+     * Creates a new JobRunCollector instance with empty state,
+     * ready to collect job runs from log entries.
+     */
     public JobRunCollector() {
         startedJobs = new HashMap<>();
         jobRuns = new ArrayList<>();
@@ -49,7 +53,8 @@ public class JobRunCollector {
     }
 
     /**
-     * Return collected job runs and flush the collected data. Durations for unfinished jobs are computed based on the latest timestamp.
+     * Return collected job runs and flush the collected data. Durations for
+     * unfinished jobs are computed based on the latest timestamp.
      */
     public List<JobRun> getJobRuns() {
         for (LogEntry unfinishedJob : startedJobs.values()) {

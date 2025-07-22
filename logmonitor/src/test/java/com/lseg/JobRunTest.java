@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
  * Unit test for the JobRun class.
  */
 public class JobRunTest {
-    
+
     @Test
     void testJobRun() {
         LogEntry start = new LogEntry(LocalTime.of(11, 36, 11),

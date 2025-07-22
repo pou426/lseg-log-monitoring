@@ -2,6 +2,9 @@ package com.lseg;
 
 import org.junit.jupiter.api.Test;
 
+/**
+ * Unit test for the ReportGeneratorImpl class.
+ */
 public class ReportGeneratorImplTest {
     @Test
     void createReportEntry() {

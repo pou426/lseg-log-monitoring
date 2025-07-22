@@ -6,11 +6,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
-/** 
- * Unit test for the LogEntry class. 
+/**
+ * Unit test for the LogEntry class.
  */
 public class LogEntryTest {
-   
     @Test
     void testLogEntry_fromCSV() {
         String line = "11:36:11,scheduled task 796,START,57672";
@@ -67,6 +66,6 @@ public class LogEntryTest {
             "57672"
         );
 
-        assertEquals(expected, entry.toEnd(LocalTime.of(01, 01,01)));
+        assertEquals(expected, entry.toEnd(LocalTime.of(01, 01, 01)));
     }
 }

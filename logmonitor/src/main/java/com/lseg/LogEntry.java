@@ -2,10 +2,17 @@ package com.lseg;
 
 import java.time.LocalTime;
 
-/** Represents an individual entry in a log file */
+/**
+ * Represents an individual entry in a log file.
+ *
+ * @param time the time of the log entry
+ * @param description the description text of the log entry
+ * @param event the event type (e.g., START or END)
+ * @param pid the process ID associated with the log entry
+ */
 public record LogEntry(LocalTime time, String description, String event, String pid) {
-    /** 
-     * Returns a new instance of LogEntry from a CSV line. 
+    /**
+     * Returns a new instance of LogEntry from a CSV line.
      */
     public static LogEntry fromCSV(String line) {
         String[] parts = line.split(",", 4);
@@ -20,7 +27,7 @@ public record LogEntry(LocalTime time, String description, String event, String 
     }
 
     /**
-     * Returns a unique key for this log entry based on its description and pid 
+     * Returns a unique key for this log entry based on its description and pid.
      */
     public String getKey() {
         return String.format("%s-%s", description, pid);
