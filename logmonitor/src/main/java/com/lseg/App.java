@@ -10,6 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Log Monitoring Application.
@@ -65,9 +66,12 @@ public final class App {
                 StandardOpenOption.TRUNCATE_EXISTING,
                 StandardOpenOption.WRITE)) {
                 for (JobRun jobRun : jobRuns) {
-                    String line = generator.createReportEntry(jobRun);
-                    writer.write(line);
+                    Optional<String> line = generator.createReportEntry(jobRun);
+                    if (line.isPresent()) {
+                        writer.write(line.get());
+                    }
                 }
+                writer.write("--- End of job run report ---\n");
             }
         } catch (IOException e) {
             throw new UncheckedIOException("Failed to write to file: " + e.getMessage(), e);

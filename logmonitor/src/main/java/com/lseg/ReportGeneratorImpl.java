@@ -1,5 +1,7 @@
 package com.lseg;
 
+import java.util.Optional;
+
 /** Implements the ReportGenerator interface. */
 public class ReportGeneratorImpl implements ReportGenerator {
     private static final int TEN_MINUTES_IN_SECONDS = 600;
@@ -7,26 +9,19 @@ public class ReportGeneratorImpl implements ReportGenerator {
     private static final String UNFINISHED = "UNFINISHED";
 
     @Override
-    public String createReportEntry(JobRun jobRun) {
-        StringBuilder sb = new StringBuilder();
-
-        // Log job run information.
+    public Optional<String> createReportEntry(JobRun jobRun) {
         String jobId = getJobId(jobRun);
-        sb.append(String.format("[INFO] Job: %s   Start: %s   End: %s   Duration: %s\n",
-                jobId,
-                jobRun.start().time(),
-                jobRun.end().isPresent() ? jobRun.end().get().time() : UNFINISHED,
-                getDurationString(jobRun)));
-
-        // Alert if the log run duration exceeds threshold.
         long seconds = jobRun.duration().toSeconds();
+
         if (seconds > TEN_MINUTES_IN_SECONDS) {
-            sb.append(String.format("[ERROR] %s took more than 10 minutes\n", jobId));
-        } else if (seconds > FIVE_MINUTES_IN_SECONDS) {
-            sb.append(String.format("[WARNING] %s took more than 5 minutes\n", jobId));
+            return Optional.of(String.format("[ERROR] %s took more than 10 minutes (start=%s, duration=%s)\n", jobId, jobRun.start().time(), getDurationString(jobRun)));
         }
 
-        return sb.toString();
+        if (seconds > FIVE_MINUTES_IN_SECONDS) {
+            return Optional.of(String.format("[WARNING] %s took more than 5 minutes (start=%s, duration=%s)\n", jobId, jobRun.start().time(), getDurationString(jobRun)));
+        }
+
+        return Optional.empty();
     }
 
     private static String getJobId(JobRun jobRun) {

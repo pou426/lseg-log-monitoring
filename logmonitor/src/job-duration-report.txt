@@ -1,66 +1,22 @@
-[INFO] Job: scheduled task 032 (pid=37980)   Start: 11:35:23   End: 11:35:56   Duration: 00:33
-[INFO] Job: scheduled task 796 (pid=57672)   Start: 11:36:11   End: 11:36:18   Duration: 00:07
-[INFO] Job: scheduled task 386 (pid=10515)   Start: 11:38:33   End: 11:40:24   Duration: 01:51
-[INFO] Job: scheduled task 188 (pid=23118)   Start: 11:40:49   End: 11:41:28   Duration: 00:39
-[INFO] Job: background job ulp (pid=60134)   Start: 11:41:11   End: 11:41:55   Duration: 00:44
-[INFO] Job: scheduled task 996 (pid=90962)   Start: 11:40:51   End: 11:42:46   Duration: 01:55
-[INFO] Job: background job dej (pid=90812)   Start: 11:39:26   End: 11:43:32   Duration: 04:06
-[INFO] Job: scheduled task 173 (pid=75164)   Start: 11:45:47   End: 11:46:51   Duration: 01:04
-[INFO] Job: background job djw (pid=36709)   Start: 11:47:04   End: 11:47:54   Duration: 00:50
-[INFO] Job: scheduled task 538 (pid=26831)   Start: 11:46:04   End: 11:48:16   Duration: 02:12
-[INFO] Job: scheduled task 946 (pid=47139)   Start: 11:44:56   End: 11:48:22   Duration: 03:26
-[INFO] Job: scheduled task 051 (pid=39547)   Start: 11:37:53   End: 11:49:22   Duration: 11:29
-[ERROR] scheduled task 051 (pid=39547) took more than 10 minutes
-[INFO] Job: scheduled task 515 (pid=45135)   Start: 11:37:14   End: 11:49:37   Duration: 12:23
-[ERROR] scheduled task 515 (pid=45135) took more than 10 minutes
-[INFO] Job: scheduled task 697 (pid=32904)   Start: 11:49:12   End: 11:49:46   Duration: 00:34
-[INFO] Job: scheduled task 074 (pid=71766)   Start: 11:45:04   End: 11:50:51   Duration: 05:47
-[WARNING] scheduled task 074 (pid=71766) took more than 5 minutes
-[INFO] Job: scheduled task 536 (pid=24799)   Start: 11:51:21   End: 11:51:28   Duration: 00:07
-[INFO] Job: background job wmy (pid=81258)   Start: 11:36:58   End: 11:51:44   Duration: 14:46
-[ERROR] background job wmy (pid=81258) took more than 10 minutes
-[INFO] Job: scheduled task 626 (pid=32674)   Start: 11:51:06   End: 11:52:32   Duration: 01:26
-[INFO] Job: background job you (pid=38579)   Start: 11:50:09   End: 11:53:42   Duration: 03:33
-[INFO] Job: scheduled task 268 (pid=87228)   Start: 11:44:25   End: 11:53:53   Duration: 09:28
-[WARNING] scheduled task 268 (pid=87228) took more than 5 minutes
-[INFO] Job: scheduled task 811 (pid=50295)   Start: 11:48:45   End: 11:55:20   Duration: 06:35
-[WARNING] scheduled task 811 (pid=50295) took more than 5 minutes
-[INFO] Job: background job cmx (pid=55722)   Start: 11:54:56   End: 11:55:43   Duration: 00:47
-[INFO] Job: scheduled task 706 (pid=33528)   Start: 11:52:47   End: 11:56:09   Duration: 03:22
-[INFO] Job: scheduled task 294 (pid=27222)   Start: 11:50:07   End: 11:56:15   Duration: 06:08
-[WARNING] scheduled task 294 (pid=27222) took more than 5 minutes
-[INFO] Job: scheduled task 521 (pid=64591)   Start: 11:57:05   End: 11:58:55   Duration: 01:50
-[INFO] Job: scheduled task 080 (pid=67833)   Start: 11:57:16   End: 12:00:51   Duration: 03:35
-[INFO] Job: scheduled task 794 (pid=87570)   Start: 11:53:57   End: 12:01:50   Duration: 07:53
-[WARNING] scheduled task 794 (pid=87570) took more than 5 minutes
-[INFO] Job: background job sqm (pid=99672)   Start: 11:57:08   End: 12:02:21   Duration: 05:13
-[WARNING] background job sqm (pid=99672) took more than 5 minutes
-[INFO] Job: scheduled task 678 (pid=96183)   Start: 11:58:12   End: 12:02:26   Duration: 04:14
-[INFO] Job: scheduled task 773 (pid=16168)   Start: 12:02:39   End: 12:02:55   Duration: 00:16
-[INFO] Job: scheduled task 920 (pid=34189)   Start: 11:59:43   End: 12:03:02   Duration: 03:19
-[INFO] Job: background job xfg (pid=86716)   Start: 11:59:29   End: 12:05:03   Duration: 05:34
-[WARNING] background job xfg (pid=86716) took more than 5 minutes
-[INFO] Job: scheduled task 004 (pid=22003)   Start: 11:55:29   End: 12:06:42   Duration: 11:13
-[ERROR] scheduled task 004 (pid=22003) took more than 10 minutes
-[INFO] Job: scheduled task 064 (pid=85742)   Start: 11:55:16   End: 12:07:33   Duration: 12:17
-[ERROR] scheduled task 064 (pid=85742) took more than 10 minutes
-[INFO] Job: background job wiy (pid=81470)   Start: 12:08:30   End: 12:09:33   Duration: 01:03
-[INFO] Job: scheduled task 746 (pid=98746)   Start: 12:04:18   End: 12:11:35   Duration: 07:17
-[WARNING] scheduled task 746 (pid=98746) took more than 5 minutes
-[INFO] Job: scheduled task 460 (pid=39860)   Start: 11:53:17   End: 12:13:09   Duration: 19:52
-[ERROR] scheduled task 460 (pid=39860) took more than 10 minutes
-[INFO] Job: background job tqc (pid=52532)   Start: 12:00:03   End: 12:13:56   Duration: 13:53
-[ERROR] background job tqc (pid=52532) took more than 10 minutes
-[INFO] Job: scheduled task 531 (pid=62922)   Start: 12:14:20   End: 12:15:09   Duration: 00:49
-[INFO] Job: scheduled task 936 (pid=62401)   Start: 12:05:59   End: 12:16:23   Duration: 10:24
-[ERROR] scheduled task 936 (pid=62401) took more than 10 minutes
-[INFO] Job: scheduled task 374 (pid=23703)   Start: 12:04:57   End: 12:18:23   Duration: 13:26
-[ERROR] scheduled task 374 (pid=23703) took more than 10 minutes
-[INFO] Job: scheduled task 182 (pid=70808)   Start: 11:44:43   End: 12:18:26   Duration: 33:43
-[ERROR] scheduled task 182 (pid=70808) took more than 10 minutes
-[INFO] Job: scheduled task 672 (pid=24482)   Start: 12:10:38   End: 12:19:14   Duration: 08:36
-[WARNING] scheduled task 672 (pid=24482) took more than 5 minutes
-[INFO] Job: scheduled task 016 (pid=72897)   Start: 12:12:27   End: UNFINISHED   Duration: UNFINISHED
-[WARNING] scheduled task 016 (pid=72897) took more than 5 minutes
-[INFO] Job: scheduled task 333 (pid=72029)   Start: 12:03:20   End: UNFINISHED   Duration: UNFINISHED
-[ERROR] scheduled task 333 (pid=72029) took more than 10 minutes
+[ERROR] scheduled task 051 (pid=39547) took more than 10 minutes (start=11:37:53, duration=11:29)
+[ERROR] scheduled task 515 (pid=45135) took more than 10 minutes (start=11:37:14, duration=12:23)
+[WARNING] scheduled task 074 (pid=71766) took more than 5 minutes (start=11:45:04, duration=05:47)
+[ERROR] background job wmy (pid=81258) took more than 10 minutes (start=11:36:58, duration=14:46)
+[WARNING] scheduled task 268 (pid=87228) took more than 5 minutes (start=11:44:25, duration=09:28)
+[WARNING] scheduled task 811 (pid=50295) took more than 5 minutes (start=11:48:45, duration=06:35)
+[WARNING] scheduled task 294 (pid=27222) took more than 5 minutes (start=11:50:07, duration=06:08)
+[WARNING] scheduled task 794 (pid=87570) took more than 5 minutes (start=11:53:57, duration=07:53)
+[WARNING] background job sqm (pid=99672) took more than 5 minutes (start=11:57:08, duration=05:13)
+[WARNING] background job xfg (pid=86716) took more than 5 minutes (start=11:59:29, duration=05:34)
+[ERROR] scheduled task 004 (pid=22003) took more than 10 minutes (start=11:55:29, duration=11:13)
+[ERROR] scheduled task 064 (pid=85742) took more than 10 minutes (start=11:55:16, duration=12:17)
+[WARNING] scheduled task 746 (pid=98746) took more than 5 minutes (start=12:04:18, duration=07:17)
+[ERROR] scheduled task 460 (pid=39860) took more than 10 minutes (start=11:53:17, duration=19:52)
+[ERROR] background job tqc (pid=52532) took more than 10 minutes (start=12:00:03, duration=13:53)
+[ERROR] scheduled task 936 (pid=62401) took more than 10 minutes (start=12:05:59, duration=10:24)
+[ERROR] scheduled task 374 (pid=23703) took more than 10 minutes (start=12:04:57, duration=13:26)
+[ERROR] scheduled task 182 (pid=70808) took more than 10 minutes (start=11:44:43, duration=33:43)
+[WARNING] scheduled task 672 (pid=24482) took more than 5 minutes (start=12:10:38, duration=08:36)
+[WARNING] scheduled task 016 (pid=72897) took more than 5 minutes (start=12:12:27, duration=UNFINISHED)
+[ERROR] scheduled task 333 (pid=72029) took more than 10 minutes (start=12:03:20, duration=UNFINISHED)
+--- End of job run report ---

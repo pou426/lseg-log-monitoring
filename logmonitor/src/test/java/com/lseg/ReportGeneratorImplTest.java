@@ -7,12 +7,7 @@ import org.junit.jupiter.api.Test;
  */
 public class ReportGeneratorImplTest {
     @Test
-    void createReportEntry() {
-        // TODO(pou426): Implement this test.
-    }
-
-    @Test
-    void createReportEntry_unfinishedJob_markedAsUnfinished() {
+    void createReportEntry_withinThreshold_doesNotGenerateLog() {
         // TODO(pou426): Implement this test.
     }
 
@@ -23,6 +18,11 @@ public class ReportGeneratorImplTest {
 
     @Test
     void createReportEntry_exceedsTenMinutes_showsError() {
+        // TODO(pou426): Implement this test.
+    }
+
+    @Test
+    void createReportEntry_exceedsThresholdAndUnfinished_markedAsUnfinished() {
         // TODO(pou426): Implement this test.
     }
 }
